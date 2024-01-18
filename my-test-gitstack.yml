@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: 2010-09-09 
+Description: 'OpenSearch Serverless collection template' 
+Resources: 
+    TestCollection: 
+        Type: 'AWS::OpenSearchServerless::Collection' 
+        Properties: 
+            Name: test-collection 
+            Type: TIMESERIES
+            Description: Search collection
+            Tags:
+              - Key: 'Squad'
+                Value: 'Eureka'
+              - Key: 'Service'
+                Value: 'svc-am-scan-grpc'
+              - Key: "STAGE"
+                Value: "dev-amaas-0-au-updx"
+        DependsOn: EncryptionPolicy 
+    
+    EncryptionPolicy:
+        Type: 'AWS::OpenSearchServerless::SecurityPolicy' 
+        Properties: 
+            Name: test-encryption-policy 
+            Type: encryption 
+            Description: Encryption policy for test collection 
+            Policy: >-
+                {"Rules":[{"ResourceType":"collection","Resource":["collection/test-collection"]}],"AWSOwnedKey":true}
