@@ -23,4 +23,4 @@ Resources:
             Type: encryption 
             Description: Encryption policy for test collection 
             Policy: >-
-                {"Rules":[{"ResourceType":"collection","Resource":["collection/test-collection"]}],"AWSOwnedKey":true}
+                {"Rules":[{"ResourceType":"collection","Resource":["collection/test-collection-git-sync"]}],"AWSOwnedKey":true}
