@@ -4,7 +4,7 @@ Resources:
     TestCollection: 
         Type: 'AWS::OpenSearchServerless::Collection' 
         Properties: 
-            Name: test-collection 
+            Name: test-collection-git-sync
             Type: TIMESERIES
             Description: Search collection
             Tags:
@@ -19,7 +19,7 @@ Resources:
     EncryptionPolicy:
         Type: 'AWS::OpenSearchServerless::SecurityPolicy' 
         Properties: 
-            Name: test-encryption-policy 
+            Name: test-encryption-policy-git-sync
             Type: encryption 
             Description: Encryption policy for test collection 
             Policy: >-
